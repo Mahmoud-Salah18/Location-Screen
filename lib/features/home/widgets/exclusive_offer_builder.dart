@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+import 'package:nectar_ui/core/utils/colors.dart';
+import 'package:nectar_ui/core/utils/text_styles.dart';
+import 'package:nectar_ui/features/home/models/product_model.dart';
+import 'package:nectar_ui/features/home/widgets/product_cart.dart';
+
+class ExclusiveOfferBuilder extends StatelessWidget {
+  const ExclusiveOfferBuilder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Exclusive Offer", style: TextStyles.titleStyle()),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "See all",
+                style: TextStyles.bodyStyle(
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.primaryColor,
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 250,
+          child: ListView.separated(
+           
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return ProductCart(model: exProducts[index]);
+            },
+            separatorBuilder: (context, index) {
+              return SizedBox(width: 15);
+            },
+            itemCount: exProducts.length,
+          ),
+        ),
+      ],
+    );
+  }
+}

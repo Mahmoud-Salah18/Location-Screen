@@ -3,7 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nectar_ui/core/constants/app_images.dart';
 import 'package:nectar_ui/core/functions/navigation.dart';
 import 'package:nectar_ui/core/utils/colors.dart';
-import 'package:nectar_ui/features/auth/pages/location.dart';
+import 'package:nectar_ui/features/welcome/welcome_screen.dart';
+
 
 
 class SplashScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      pushWithReplacement(context, const Location());
+      pushWithReplacement(context, const WelcomeScreen());
     });
   }
 
